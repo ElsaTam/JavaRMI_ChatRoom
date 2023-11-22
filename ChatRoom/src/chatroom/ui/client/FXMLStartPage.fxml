@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatroom.ui.client.FXMLStartPageController">
+    <stylesheets>
+        <URL value="@fxmlstartpage.css" />
+    </stylesheets>
+   <children>
+      <TabPane fx:id="tabPane" layoutY="24.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Serveurs">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#connectToServ" text="Se connecter au serveur" />
+                <MenuItem mnemonicParsing="false" onAction="#disconnectFromServ" text="Se déconnecter du serveur" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Salles">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#connectToRoom" text="Se connecter à une salle" />
+                <MenuItem mnemonicParsing="false" onAction="#createRoom" text="Créer une salle" />
+                <MenuItem mnemonicParsing="false" onAction="#closeRoom" text="Se déconnecter de la salle" />
+                <MenuItem mnemonicParsing="false" onAction="#closeAllRoom" text="Se déconnecter de toutes les salles" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Envois">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#sendPublicMessage" text="Message à la salle" />
+                  <MenuItem mnemonicParsing="false" onAction="#sendPrivateMessage" text="Message privé" />
+              <MenuItem mnemonicParsing="false" onAction="#sendPublicFile" text="Fichier à la salle" />
+                  <MenuItem mnemonicParsing="false" onAction="#sendPrivateFile" text="Fichier privé" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="labelPseudo" prefHeight="25.0" text="Vous n'êtes pas connecté" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>
